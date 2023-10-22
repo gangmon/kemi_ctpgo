@@ -9,3 +9,4 @@ bin/StreamFile
 bin/ctpgo
 .idea
 .vscode
+build
