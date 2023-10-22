@@ -2,10 +2,11 @@ package strategy
 
 import (
 	"fmt"
-	"github.com/TradeXPlus/ctpgo/lib"
-	"github.com/TradeXPlus/ctpgo/utils"
 	"log"
 	"time"
+
+	"github.com/TradeXPlus/ctpgo/lib"
+	"github.com/TradeXPlus/ctpgo/utils"
 )
 
 // GetTraderRequestId 获得交易请求编号
@@ -47,6 +48,15 @@ func (p *FtdcTraderSpi) OnFrontConnected() {
 		"= 交易模块初始化成功，API 版本：" + lib.CThostFtdcTraderApiGetApiVersion() + "\n" +
 		"================================================================================================="
 	fmt.Println(TraderStr)
+	fmt.Println("客户端信息采集中...\n")
+	var collectArgs2 *int
+	*collectArgs2 = 256
+	collectRes := lib.CTP_GetSystemInfo("kkkkmmmm", collectArgs2)
+	if collectRes == 0 {
+		fmt.Println("客户端信息采集成功")
+	} else {
+		fmt.Println("客户端采集信息失败")
+	}
 
 	p.IsTraderInit = true
 
@@ -67,6 +77,7 @@ func (p *FtdcTraderSpi) ReqAuthenticate() {
 	req.SetUserID(p.Config.InvestorID)
 	req.SetAppID(p.Config.AppID)
 	req.SetAuthCode(p.Config.AuthCode)
+	req.SetUserProductInfo("kkkkmmmm")
 	iResult := p.TraderApi.ReqAuthenticate(req, p.GetTraderRequestId())
 
 	if iResult != 0 {
