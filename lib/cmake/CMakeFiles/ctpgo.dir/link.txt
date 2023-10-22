@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC  -std=c++11 -shared -Wl,-soname,libctpgo.so -o libctpgo.so CMakeFiles/ctpgo.dir/code/tradeXPlus/v6.7.0_cp/kemi_ctpgo/lib/linux64/ctpgo_wrap.cxx.o   -L/code/tradeXPlus/v6.7.0_cp/kemi_ctpgo/lib/cmake/../linux64  -Wl,-rpath,/code/tradeXPlus/v6.7.0_cp/kemi_ctpgo/lib/cmake/../linux64 -lthosttraderapi_se -lthostmduserapi_se 
