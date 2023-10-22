@@ -5,6 +5,7 @@
 #include "ThostFtdcUserApiStruct.h"
 #include "ThostFtdcMdApi.h"
 #include "ThostFtdcTraderApi.h"
+#include "DataCollect.h"
 %}
 
 #include "std_string.i"
@@ -25,3 +26,4 @@
 %include "ThostFtdcUserApiStruct.h"
 %include "ThostFtdcMdApi.h"
 %include "ThostFtdcTraderApi.h"
+%include "DataCollect.h"

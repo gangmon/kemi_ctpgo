@@ -8,4 +8,4 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../linux64)
 
 add_library(ctpgo SHARED ${DIR_LIB_SRCS})
 
-TARGET_LINK_LIBRARIES(ctpgo ${MY_LIB_PATH}/libthosttraderapi_se.so ${MY_LIB_PATH}/libthostmduserapi_se.so)
+TARGET_LINK_LIBRARIES(ctpgo ${MY_LIB_PATH}/libthosttraderapi_se.so ${MY_LIB_PATH}/libthostmduserapi_se.so ${MY_LIB_PATH/LinuxDataCollect.so})
