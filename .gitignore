@@ -1,0 +1,10 @@
+cfg.json
+ctpgo
+bin/cfg.json
+lib/cmake/CMakeFiles
+lib/cmake/CMakeCache.txt
+lib/cmake/Makefile
+lib/cmake/cmake_install.cmake
+bin/StreamFile
+bin/ctpgo
+.idea
