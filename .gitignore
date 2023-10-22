@@ -8,3 +8,4 @@ lib/cmake/cmake_install.cmake
 bin/StreamFile
 bin/ctpgo
 .idea
+.vscode
