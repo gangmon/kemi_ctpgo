@@ -48,15 +48,6 @@ func (p *FtdcTraderSpi) OnFrontConnected() {
 		"= 交易模块初始化成功，API 版本：" + lib.CThostFtdcTraderApiGetApiVersion() + "\n" +
 		"================================================================================================="
 	fmt.Println(TraderStr)
-	fmt.Println("客户端信息采集中...\n")
-	var collectArgs2 *int
-	*collectArgs2 = 256
-	collectRes := lib.CTP_GetSystemInfo("kkkkmmmm", collectArgs2)
-	if collectRes == 0 {
-		fmt.Println("客户端信息采集成功")
-	} else {
-		fmt.Println("客户端采集信息失败")
-	}
 
 	p.IsTraderInit = true
 

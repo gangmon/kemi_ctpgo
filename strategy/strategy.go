@@ -1,9 +1,11 @@
 package strategy
 
 import (
+	"fmt"
+	"reflect"
+
 	"github.com/TradeXPlus/ctpgo/lib"
 	"github.com/TradeXPlus/ctpgo/utils"
-	"reflect"
 )
 
 type IStrategy interface {
@@ -58,15 +60,15 @@ func (s *Strategy) OnQuote(sym string, ticker Ticker) { //触发Ticker事件
 
 	ticker.Volume = ticker.DayVolume - s.TK[sym].DayVolume
 	ticker.Interest = ticker.OpenInterest - s.TK[sym].OpenInterest
-	/*
-		fmt.Println(utils.TimeToStr(int64(ticker.UpdateTime), ""), "\t合约："+sym,
-			"\t价格："+utils.Float64ToString(ticker.Price),
-			"\t现手："+utils.IntToString(ticker.Volume),
-			"\t仓差："+utils.Float64ToString(ticker.Interest),
-			"\t买一："+utils.Float64ToString(ticker.BidPrice1)+"\t"+utils.IntToString(ticker.BidVolume1),
-			"\t卖一："+utils.Float64ToString(ticker.AskPrice1)+"\t"+utils.IntToString(ticker.AskVolume1),
-		)
-	*/
+
+	fmt.Println(utils.TimeToStr(int64(ticker.UpdateTime), ""), "\t合约："+sym,
+		"\t价格："+utils.Float64ToString(ticker.Price),
+		"\t现手："+utils.IntToString(ticker.Volume),
+		"\t仓差："+utils.Float64ToString(ticker.Interest),
+		"\t买一："+utils.Float64ToString(ticker.BidPrice1)+"\t"+utils.IntToString(ticker.BidVolume1),
+		"\t卖一："+utils.Float64ToString(ticker.AskPrice1)+"\t"+utils.IntToString(ticker.AskVolume1),
+	)
+
 	if s.TK[sym].UpdateTime == ticker.UpdateTime { //1秒内多条推送取消
 		currKline[sym] = UpdateKLine(currKline[sym], ticker)
 		//更新PreTicker数据
