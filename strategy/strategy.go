@@ -116,11 +116,11 @@ func (s *Strategy) OnBar(sym string, kdata Kline) { //触发K线更新事件
 }
 
 func (s *Strategy) OnOrderChange(pOrder OrderListStruct) {
-
+	fmt.Printf("OnOrderChange %#v", pOrder)
 }
 
 func (s *Strategy) OnTradeDeal(pTrade lib.CThostFtdcTradeField) {
-
+	fmt.Printf("OnTradeDeal %#v", pTrade)
 }
 
 func (s *Strategy) EmptyPosition() {

@@ -10,3 +10,5 @@ bin/ctpgo
 .idea
 .vscode
 build
+StreamFile
+tags
